@@ -1,13 +1,6 @@
 {
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist/front-wumena"
-      }
-    }
-  ],
+  "buildCommand": "ng build --configuration=production",
+  "outputDirectory": "dist/front-wumena",
   "rewrites": [
     {
       "source": "/(.*)",
