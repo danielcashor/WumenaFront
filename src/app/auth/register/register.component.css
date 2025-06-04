@@ -1,0 +1,57 @@
+.register-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 40px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f8f9fa; /* Fondo más claro */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #343a40; /* Un color oscuro para el texto */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+input, button {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+input:focus, button:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+input {
+  background-color: #fff;
+}
+
+button {
+  background-color: #007bff; /* Color de fondo de botón azul */
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3; /* Azul más oscuro cuando pasa el ratón */
+  transition: background-color 0.3s ease;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  text-align: center;
+}

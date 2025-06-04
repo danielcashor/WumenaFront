@@ -1,0 +1,17 @@
+<div class="home-container">
+  <h2>Resultados para: "{{ query }}"</h2>
+  <div class="product-grid">
+    @if (productos.length > 0) {
+      @for (product of productos; track product.id) {
+        <a [routerLink]="['/product', product.id]" class="product-card">
+          <img src="{{ product.imagen }}" alt="{{ product.nombre }}" />
+          <h3>{{ product.nombre }}</h3>
+          <p class="user">Publicado por: {{ product.usuarios?.nombre || 'Anónimo' }}</p>
+          <p class="price">{{ product.precio }} €</p>
+        </a>
+      }
+    } @else {
+      <p>No se encontraron productos.</p>
+    }
+  </div>
+</div>

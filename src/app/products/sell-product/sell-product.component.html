@@ -1,0 +1,45 @@
+<div class="sell-container">
+  <h2>Publicar nuevo producto</h2>
+
+  <form [formGroup]="sellForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="name">Nombre del producto</label>
+      <input id="name" type="text" formControlName="name" class="form-control custom-input" placeholder="Ej. Zapatillas Nike" />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Descripción</label>
+      <textarea id="description" formControlName="description" rows="3" class="form-control custom-input" placeholder="Describe el producto brevemente..."></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="category">Categoría</label>
+      <select id="category" formControlName="category" class="form-control custom-input">
+        <option value="">Selecciona una categoría</option>
+        <option value="ropa">Ropa</option>
+        <option value="tecnologia">Tecnología</option>
+        <option value="deporte">Deporte</option>
+        <option value="libros">Libros</option>
+        <option value="otros">Otros</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Precio (€)</label>
+      <input id="price" type="number" formControlName="price" class="form-control custom-input" />
+    </div>
+
+    <div class="form-group">
+      <label for="image">Imagen del producto</label>
+      <input id="image" type="file" (change)="onImageSelected($event)" class="form-control-file" />
+    </div>
+
+    <div *ngIf="imagePreview" class="image-preview">
+      <p>Previsualización:</p>
+      <img [src]="imagePreview" alt="Previsualización de imagen" />
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-submit">Publicar producto</button>
+  </form>
+</div>

@@ -1,0 +1,36 @@
+.container {
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+.chat-list {
+  overflow-y: auto;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-right: 1px solid #ddd;
+}
+
+.chat-list h5 {
+  margin-bottom: 1rem;
+}
+
+.list-group-item {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.list-group-item:hover {
+  background-color: #e9ecef;
+}
+
+.chat-box {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  overflow: hidden;
+  height: calc(100vh - 60px); /* Ajusta si tu header tiene otra altura */
+  background-color: #fff;
+  margin-bottom: 70px; /* Ajuste por si tienes un footer fijo */
+}

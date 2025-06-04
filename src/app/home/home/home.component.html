@@ -1,0 +1,31 @@
+<!-- Productos recientes -->
+<h2>Recientes</h2>
+<div class="product-grid">
+  @for (product of recentProducts; track product.id) {
+    <a [routerLink]="['/product', product.id]" class="product-card">
+      <img
+        [src]="
+          product.imagen
+            ? product.imagen
+            : 'https://picsum.photos/200?random=' + product.id
+        "
+        alt="{{ product.nombre }}"
+      />
+      <h3>{{ product.nombre }}</h3>
+      <p class="user">Publicado por: {{ product.usuarios?.nombre || 'Anónimo' }}</p>
+    </a>
+  }
+</div>
+
+<!-- Productos del usuario -->
+<!--
+<h2>{{ selectedUser }}</h2>
+<div class="product-grid">
+  @for (product of userProducts; track product.id) {
+    <a [routerLink]="['/product', product.id]" class="product-card">
+      <img src="https://picsum.photos/200?random={{ product.id }}" alt="Producto" />
+      <h3>{{ product.nombre }}</h3>
+    </a>
+  }
+</div>
+-->

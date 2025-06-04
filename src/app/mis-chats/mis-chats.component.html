@@ -1,0 +1,27 @@
+<div class="container d-flex chat-container">
+  <div class="chat-list col-4 border-end">
+    <h5 class="mb-3">Tus chats</h5>
+
+    @if (chats.length > 0) {
+      <ul class="list-group">
+        @for ( chat of chats; track chat.id) {
+          @if ((usuarioId !== chat.usuario_1_id && chat.usuario1) || chat.usuario2) {
+            <li (click)="abrirChat(chat)" class="list-group-item list-group-item-action">
+              <strong>Con:</strong>
+              {{ usuarioId === chat.usuario_1_id ? chat.usuario2.nombre : chat.usuario1.nombre }}<br>
+              <strong>Producto:</strong> {{ chat.producto.nombre }}
+            </li>
+          }
+        }
+      </ul>
+    } @else {
+      <p>No tienes chats disponibles.</p>
+    }
+  </div>
+
+  @if (mostrarChat) {
+    <div class="chat-box col-8">
+      <app-chat></app-chat>
+    </div>
+  }
+</div>

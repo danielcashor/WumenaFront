@@ -1,0 +1,203 @@
+/* Ya existente */
+:host {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.detail-container {
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+/* Estilos por botón */
+.chat-button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #28a745; /* verde */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chat-button:hover {
+  background-color: #1e7e34;
+}
+
+.edit-button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #007bff; /* azul */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-button:hover {
+  background-color: #0056b3;
+}
+
+.delete-button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #dc3545; /* rojo */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #a71d2a;
+}
+.edit-form {
+  margin-top: 2rem;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.edit-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  margin-top: 1rem;
+  color: #333;
+}
+
+.edit-form input,
+.edit-form select,
+.edit-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.edit-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.save-button {
+  background-color: #007bff; /* Azul */
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.save-button:hover {
+  background-color: #0056b3;
+}
+
+/* **NUEVO: Estilos para los botones deshabilitados** */
+button:disabled,
+.chat-button:disabled,
+.edit-button:disabled,
+.delete-button:disabled {
+  background-color: #cccccc !important; /* Gris claro */
+  cursor: not-allowed; /* Cambia el cursor a "prohibido" */
+  opacity: 0.6; /* Reduce la opacidad para que se vea deshabilitado */
+  pointer-events: none; /* **IMPORTANTE: Deshabilita los eventos de ratón (clics)** */
+}
+
+/* **NUEVO: Estilos para el formulario de edición interno** */
+.edit-form-inner {
+  margin-top: 2rem;
+  background-color: #e9e9e9; /* Un color ligeramente diferente para diferenciarlo */
+  padding: 1.5rem;
+  border: 1px solid #c0c0c0;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Sutil sombra */
+}
+
+.edit-form-inner label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  margin-top: 0.75rem; /* Ajustado para más cohesión */
+  color: #555; /* Color de texto un poco más oscuro */
+}
+
+.edit-form-inner input,
+.edit-form-inner select, /* Asegúrate de incluir el select aquí */
+.edit-form-inner textarea {
+  width: 100%;
+  padding: 0.6rem; /* Ligeramente más padding */
+  border-radius: 8px; /* Bordes más redondeados */
+  border: 1px solid #b0b0b0; /* Borde más definido */
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transición para focus */
+}
+
+.edit-form-inner input:focus,
+.edit-form-inner select:focus,
+.edit-form-inner textarea:focus {
+  border-color: #007bff; /* Borde azul al enfocar */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Sombra azul al enfocar */
+  outline: none; /* Quita el outline por defecto del navegador */
+}
+
+.edit-form-inner textarea {
+  resize: vertical;
+  min-height: 120px; /* Ligeramente más alto */
+}
+
+.save-button-inner { /* Estilo para el botón dentro del formulario interno */
+  background-color: #28a745; /* Usando el verde para el botón de guardar */
+  color: white;
+  padding: 0.75rem 1.5rem; /* Más padding */
+  border: none;
+  border-radius: 8px; /* Bordes más redondeados */
+  cursor: pointer;
+  margin-top: 1.5rem; /* Espacio superior */
+  transition: background-color 0.3s ease;
+}
+
+.save-button-inner:hover {
+  background-color: #1e7e34;
+}

@@ -1,0 +1,35 @@
+<header>
+  <a routerLink="/" class="logo">Wuměna</a>
+
+  <!-- Formulario de búsqueda -->
+  <form class="search-form" (ngSubmit)="onSearch()">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      name="search"
+      placeholder="Buscar productos..."
+      class="search-bar"
+    />
+  </form>
+
+  <div class="buttons">
+    @if (!authService.isLoggedIn()) {
+      <button routerLink="/login" class="btn">Iniciar sesión</button>
+      <button routerLink="/register" class="btn btn-primary">Registrarse</button>
+    } @else {
+      <button routerLink="/sell" class="btn btn-sell">Vender</button>
+      <div class="dropdown" (click)="toggleDropdown()">
+        <button class="btn btn-user">
+          {{ authService.getUser()?.nombre }} ⮟
+        </button>
+        @if (showDropdown) {
+          <div class="dropdown-menu">
+            <a routerLink="/profile" class="dropdown-item">Perfil</a>
+            <a routerLink="/mis-chats" class="dropdown-item">Mis chats</a>
+            <button class="dropdown-item" (click)="logout()">Cerrar sesión</button>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</header>

@@ -1,0 +1,21 @@
+<div class="category-container">
+  <h2>Productos en la categoría: {{ categoria }}</h2>
+
+  @if (productos.length > 0) {
+    <div class="product-grid">
+      @for (producto of productos; track producto.id) {
+        <a [routerLink]="['/product', producto.id]" class="product-card">
+          <img
+            [src]="producto.imagen"
+            alt="Imagen de {{ producto.nombre }}"
+          />
+          <h3>{{ producto.nombre }}</h3>
+          <p class="user">Publicado por: {{ producto.usuarios?.nombre || 'Anónimo' }}</p>
+          <p class="price">{{ producto.precio }} €</p>
+        </a>
+      }
+    </div>
+  } @else {
+    <p class="no-products">No hay productos disponibles en esta categoría.</p>
+  }
+

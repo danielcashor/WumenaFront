@@ -1,0 +1,65 @@
+@if (product; as product) {
+  <div class="detail-container">
+    <h2>{{ product.nombre }}</h2>
+    <img
+      [src]="
+        product.imagen
+          ?  product.imagen
+          : 'https://picsum.photos/200?random=' + product.id
+      "
+      alt="{{ product.nombre }}"
+    />
+    <p><strong>Precio:</strong> {{ product.precio }} €</p>
+    <p><strong>Descripción:</strong> {{ product.descripcion }}</p>
+    <p><strong>Categoría:</strong> {{ product.categoria }}</p>
+    <p><strong>Estado:</strong> {{ product.estado }}</p>
+    <p><strong>Publicado por:</strong> {{ product.usuarios?.nombre || 'Anónimo' }}</p>
+
+    <button class="chat-button me-2" (click)="iniciarChat()">Iniciar chat</button>
+
+    <button
+      class="edit-button me-2"
+      [disabled]="!puedeEditar"
+      (click)="mostrarFormulario = !mostrarFormulario"
+    >
+      Editar
+    </button>
+
+    <button
+      class="delete-button"
+      [disabled]="!puedeEditar"
+      (click)="confirmarEliminar()"
+    >
+      Eliminar
+    </button>
+
+    @if (mostrarFormulario) {
+      <form (ngSubmit)="guardarCambios()" class="mt-3 edit-form-inner"> <div class="mb-2">
+          <label for="nombre-inner">Nombre:</label>
+          <input id="nombre-inner" class="form-control" [(ngModel)]="product.nombre" name="nombre" required />
+        </div>
+        <div class="mb-2">
+          <label for="precio-inner">Precio:</label>
+          <input id="precio-inner" class="form-control" type="number" [(ngModel)]="product.precio" name="precio" required />
+        </div>
+        <div class="mb-2">
+          <label for="categoria-inner">Categoría:</label>
+          <select id="categoria-inner" class="form-control" [(ngModel)]="product.categoria" name="categoria" required>
+            <option value="">Selecciona una categoría</option>
+            <option value="ropa">Ropa</option>
+            <option value="tecnologia">Tecnología</option>
+            <option value="deporte">Deporte</option>
+            <option value="libros">Libros</option>
+            <option value="otros">Otros</option>
+          </select>
+        </div>
+        <div class="mb-2">
+          <label for="descripcion-inner">Descripción:</label>
+          <textarea id="descripcion-inner" class="form-control" [(ngModel)]="product.descripcion" name="descripcion" required></textarea>
+        </div>
+        <button class="btn btn-success save-button-inner" type="submit">Guardar cambios</button> </form>
+    }
+  </div>
+} @else {
+  <p>Cargando producto...</p>
+}

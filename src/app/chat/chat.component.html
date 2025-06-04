@@ -1,0 +1,17 @@
+<div class="chat-container">
+  <h2>Chat con usuario ID {{ receptorId }}</h2>
+
+  <div class="messages">
+    @for ( msg of mensajes; track msg) {
+      <div [class.own]="msg.emisor_id === usuarioId">
+        <strong>{{ msg.emisor_id === usuarioId ? 'Tú' : 'Usuario ' + msg.emisor_id }}:</strong>
+        {{ msg.mensaje }}
+      </div>
+    }
+  </div>
+
+  <form (submit)="enviarMensaje()" class="message-form">
+    <input [(ngModel)]="mensaje" name="mensaje" placeholder="Escribe un mensaje..." required />
+    <button type="submit">Enviar</button>
+  </form>
+</div>
