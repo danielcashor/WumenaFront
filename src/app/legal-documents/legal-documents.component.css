@@ -1,0 +1,72 @@
+.legal-documents-container {
+  max-width: 800px; /* Ancho máximo para el contenido */
+  margin: 40px auto; /* Centra el contenedor con margen superior e inferior */
+  padding: 30px; /* Espaciado interno */
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 8px; /* Bordes ligeramente redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Sombra suave */
+  font-family: 'Arial', sans-serif; /* Fuente legible */
+  line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
+  color: #333; /* Color de texto oscuro */
+}
+
+.legal-documents-container h1 {
+  font-size: 2.2em; /* Tamaño grande para el título principal */
+  color: #2c3e50; /* Color distintivo para el título */
+  text-align: center; /* Centrar el título */
+  margin-bottom: 40px; /* Espacio debajo del título */
+  border-bottom: 2px solid #e0e0e0; /* Línea divisoria */
+  padding-bottom: 15px; /* Espacio para la línea divisoria */
+}
+
+.legal-documents-container h2 {
+  font-size: 1.8em; /* Tamaño para los subtítulos de sección */
+  color: #34495e; /* Color para los subtítulos */
+  margin-top: 30px; /* Espacio encima del subtítulo */
+  margin-bottom: 15px; /* Espacio debajo del subtítulo */
+  padding-left: 10px; /* Un poco de sangría */
+  border-left: 5px solid #007bff; /* Barra lateral decorativa */
+}
+
+.legal-documents-container p {
+  margin-bottom: 15px; /* Espacio debajo de los párrafos */
+}
+
+.legal-documents-container ul {
+  margin-left: 25px; /* Sangría para las listas */
+  margin-bottom: 15px; /* Espacio debajo de la lista */
+  list-style-type: disc; /* Tipo de viñeta */
+}
+
+.legal-documents-container li {
+  margin-bottom: 8px; /* Espacio entre elementos de lista */
+}
+
+.legal-documents-container hr {
+  border: 0;
+  height: 1px;
+  background-color: #eee; /* Línea divisoria más sutil */
+  margin: 40px 0; /* Espacio alrededor de la línea */
+}
+
+/* Estilos específicos para bold dentro de secciones */
+.legal-documents-container section strong {
+  color: #007bff; /* Color para destacar texto importante */
+}
+
+/* Opcional: Responsive adjustments */
+@media (max-width: 768px) {
+  .legal-documents-container {
+    margin: 20px 15px;
+    padding: 20px;
+  }
+
+  .legal-documents-container h1 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+  }
+
+  .legal-documents-container h2 {
+    font-size: 1.5em;
+  }
+}

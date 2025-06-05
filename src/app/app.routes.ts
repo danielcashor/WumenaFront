@@ -14,9 +14,11 @@ import { ProductsByCategoryComponent } from './categorie/categoria/categoria.com
 import { SearchResultsComponent } from './search/search-results/search-results.component';
 import { ChatComponent } from './chat/chat.component';
 import { MisChatsComponent } from './mis-chats/mis-chats.component';
+import { LegalDocumentsComponent } from './legal-documents/legal-documents.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'legal-documents', component: LegalDocumentsComponent },
   { path: 'login', component: LoginComponent, canActivate: [NoAuthGuard] },
   { path: 'register', component: RegisterComponent, canActivate: [NoAuthGuard] },
   { path: 'categories/:categoria', component: ProductsByCategoryComponent },
