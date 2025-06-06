@@ -6,6 +6,7 @@ header {
   padding: 15px 20px;
   color: white;
   font-family: Arial, sans-serif;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -13,21 +14,28 @@ header {
   font-weight: bold;
   color: white;
   text-decoration: none;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .search-bar {
-  flex: 1;
-  max-width: 400px;
-  padding: 8px;
+  flex: 1 1 100%;
+  max-width: none;
+  padding: 10px;
   border: none;
   border-radius: 20px;
   outline: none;
   font-size: 1rem;
+  margin-bottom: 10px;
 }
 
 .buttons {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
 }
 
 .btn {
@@ -38,6 +46,8 @@ header {
   border-radius: 5px;
   cursor: pointer;
   font-size: 0.9rem;
+  flex-grow: 1;
+  min-width: 100px;
 }
 
 .btn:hover {
@@ -62,6 +72,7 @@ header {
 .btn-sell:hover {
   background-color: #219150;
 }
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -91,3 +102,33 @@ header {
   background-color: #f8f9fa;
 }
 
+
+@media (min-width: 768px) {
+  header {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .logo {
+    width: auto;
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  .search-bar {
+    flex: 1;
+    max-width: 400px;
+    margin-bottom: 0;
+  }
+
+  .buttons {
+    width: auto;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+  }
+
+  .btn {
+    flex-grow: 0;
+    min-width: auto;
+  }
+}

@@ -26,7 +26,7 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       const formData = {
         email: this.loginForm.value.email,
-        clave: this.loginForm.value.password  // clave, no password
+        clave: this.loginForm.value.password
       };
 
       this.userService.login(formData).subscribe({

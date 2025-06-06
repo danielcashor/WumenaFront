@@ -2,22 +2,31 @@
   height: 100vh;
   display: flex;
   overflow: hidden;
+  flex-direction: column;
 }
 
 .chat-list {
   overflow-y: auto;
   background-color: #f8f9fa;
   padding: 1rem;
-  border-right: 1px solid #ddd;
+  border-right: none;
+  border-bottom: 1px solid #ddd;
+  flex-basis: 150px;
+  flex-shrink: 0;
+  max-height: 40vh;
 }
 
 .chat-list h5 {
   margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
 }
 
 .list-group-item {
   cursor: pointer;
   transition: background-color 0.2s;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
 }
 
 .list-group-item:hover {
@@ -30,7 +39,34 @@
   flex-direction: column;
   padding: 1rem;
   overflow: hidden;
-  height: calc(100vh - 60px); /* Ajusta si tu header tiene otra altura */
+  height: calc(100vh - 60px - 150px - 70px);
   background-color: #fff;
-  margin-bottom: 70px; /* Ajuste por si tienes un footer fijo */
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .chat-list {
+    flex-basis: 280px;
+    border-right: 1px solid #ddd;
+    border-bottom: none;
+    max-height: none;
+  }
+
+  .chat-list h5 {
+    text-align: left;
+    font-size: 1.25rem;
+  }
+
+  .list-group-item {
+    font-size: 1rem;
+  }
+
+  .chat-box {
+
+    height: calc(100vh - 60px);
+    margin-bottom: 0;
+  }
 }
